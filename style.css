@@ -61,7 +61,7 @@ body {
 }
 @keyframes soon {
     100% {
-        transform: translateX(-75px);
+        transform: translateX(-95px);
     }
 }
 .start .soon {
