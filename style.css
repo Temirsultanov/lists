@@ -15,6 +15,9 @@ body {
 
     --special: #e1c861;
 }
+.e1c861 {
+    color: var(--special);
+}
 .title {
     height: 100%;
     display: flex;
@@ -23,47 +26,115 @@ body {
 .lists-wrapper {
     position: relative;
 }
+
+
+/* Lists-e1c861 */
 .lists-e1c861 {
-    transition: 0.2s 1.5s ease;
     position: absolute;
     top: 0;
-    width: 0;
     overflow: hidden;
+
+    width: 0px;
 }
-.e1c861 {
-    color: var(--special);
+@keyframes lists-e1c861 {
+    10%{
+        width: 95px;
+    }
+    90% {
+        width: 95px;
+    }
+    91% {
+        width: 110px;
+    }
+    100% {
+      width: 110px; 
+    }
 }
+.start .lists-e1c861 {
+    animation: lists-e1c861 2s ease 1.5s forwards;
+}
+
+/* Soon */
+.soon {
+    display: block;
+    transform: translateX(0px);
+}
+@keyframes soon {
+    100% {
+        transform: translateX(-75px);
+    }
+}
+.start .soon {
+    animation: soon 0.3s ease 3.3s forwards;
+}
+
+/* Lists-white */
+.lists-white {
+    width: 100px;
+    opacity: 1;
+}
+@keyframes lists-white {
+    100% {
+        opacity: 0;
+    }
+}
+.start .lists-white {
+    animation: lists-white 0s ease 2s forwards;
+}
+
+/* First Animation */
 .firstAnimation {
     display: flex;
     overflow: hidden;
-    transition: 0.5s 1s ease;
+
     width: 173px;
     height: 43px;
 }
+@keyframes firstAnimation {
+    100% {
+        width: 0;
+    }
+}
 .start .firstAnimation {
-    width: 0;
+    animation: firstAnimation 0.5s ease 1s forwards;
 }
-.start .lists-e1c861 {
-    width: 100px;    
-}
+
+/* Sharp */
 .sharp {
     transition: 0.3s 2s ease;
     transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+@keyframes sharp {
+    100% {
+        transform: scale(0.5) rotate(360deg);
+        filter: blur(2px);
+        opacity: 0;
+    }
 }
 .start .sharp {
-    transform: scale(0.5) rotate(360deg);
-    filter: blur(2px);
-    opacity: 0;
+    animation: sharp 0.3s ease 2s forwards;
 }
+
+
+
+/* Leaf */
 .leaf {
     width: 30px;
     position: absolute;
-    transition: 0.3s 2s ease;
+    margin-top: 2px;
+    
     transform: translateX(-55px) scale(0) rotate(-360deg);
     filter: blur(2px);
+    opacity: 0;
+}
+@keyframes leaf {
+    100% {
+        transform: translateX(-55px) scale(1) rotate(0deg);
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
 .start .leaf {
-    transform: translateX(-55px) scale(1) rotate(0deg);
-    filter: blur(0px);
-    opacity: 1;
+    animation: leaf 0.3s ease 2s forwards;
 }
